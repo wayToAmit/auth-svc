@@ -1,0 +1,14 @@
+# Maven build output
+target/
+!.mvn/wrapper/maven-wrapper.jar
+
+# IDEs
+.idea/
+*.iml
+.vscode/
+
+# Logs
+*.log
+
+# Spring Boot config (optional secrets)
+application*.yml
