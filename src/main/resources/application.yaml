@@ -1,0 +1,31 @@
+server:
+  port: 9090
+logging:
+  level:
+    org.springdoc: DEBUG
+    org.springframework.web: DEBUG
+
+spring:
+  application:
+      name: auth-service
+  datasource:
+    url: jdbc:mysql://localhost:3306/userdb?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+    username: root
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        service-id: auth-service-9090
+        enabled: true
+        register: false
+  profiles:
+    active: consistencyHashService
